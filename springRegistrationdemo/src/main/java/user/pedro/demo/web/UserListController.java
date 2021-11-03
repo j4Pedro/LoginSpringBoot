@@ -20,14 +20,14 @@ public class UserListController {
 	private UserService userService;
 	
 	@GetMapping("/userlist")
-	public String viewHomePage(Model model) {
+	public String viewUserlistPage(Model model) {
 		return findPaginated(1, "firstName", "asc", model);
 	}
 
 	@GetMapping("/page/{pageNo}")
 	public String findPaginated(@PathVariable(value = "pageNo") int pageNo, @RequestParam("sortField") String sortField,
 			@RequestParam("sortDir") String sortDir, Model model) {
-		int pageSize = 5;
+		int pageSize = 200;
 
 		Page<User> page = userService.findPaginated(pageNo, pageSize, sortField, sortDir);
 		List<User> listUsers = page.getContent();

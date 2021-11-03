@@ -21,7 +21,8 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#" th:href="@{/}">Registration Module</a>
+				<a class="navbar-brand" href="#" th:href="@{/}">Registration
+					Module</a>
 			</div>
 		</div>
 	</nav>
@@ -35,7 +36,12 @@
 
 				<!-- success message -->
 				<div th:if="${param.success}">
-					<div class="alert alert-info">You've  registered successfully!!</div>
+					<div class="alert alert-info" role="alert">You've registered
+						successfully!!</div>
+				</div>
+				<!-- error message -->
+				<div th:if="${param.error}">
+					<div class="alert alert-danger" role="alert">Invalid Email!</div>
 				</div>
 
 				<h1>Registration</h1>
