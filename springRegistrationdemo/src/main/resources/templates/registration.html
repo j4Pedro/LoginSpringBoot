@@ -72,12 +72,26 @@
 					</div>
 
 					<div class="form-group">
+						<label class="control-label">驗證碼</label>
+						<div class="col-md-3">
+							<div class="row_bj" style="width: 100%;">
+								<input type="text" class="form-control" id="code" name="code"
+									required placeholder="請輸入驗證碼"> <img alt="驗證碼"
+									onclick="this.src='/getCode?d='+new Date()*1" src="/getCode"
+									style="margin-left: 20px;" />
+							</div>
+							<label class="control-label text-danger" id="code2">(驗證碼錯誤)</label>
+						</div>
+					</div>
+
+
+					<div class="form-group">
 						<button type="submit" class="btn btn-success">Register</button>
 						<span>Already registered? <a href="/" th:href="@{/login}">Login
 								here</a></span>
 					</div>
-				</form>
 			</div>
+			</form>
 		</div>
 	</div>
 </body>
