@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Index page</title>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -32,11 +32,16 @@
 		</div>
 	</nav>
 
-	<br>
-	<br>
-
+<br>
+<br>
 	<div class="container">
 		<h1>Registration and Login Demo</h1>
+		
+
+	<div class="form-group">
+		<span>All Users <a href="/" th:href="@{/userlist}">User list here..</a></span>
+	</div>
+		
 		Welcome <span sec:authentication="principal.username"> User</span>
 	</div>
 </body>
