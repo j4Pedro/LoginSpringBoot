@@ -27,7 +27,7 @@ public class UserListController {
 	@GetMapping("/page/{pageNo}")
 	public String findPaginated(@PathVariable(value = "pageNo") int pageNo, @RequestParam("sortField") String sortField,
 			@RequestParam("sortDir") String sortDir, Model model) {
-		int pageSize = 200;
+		int pageSize = 20;
 
 		Page<User> page = userService.findPaginated(pageNo, pageSize, sortField, sortDir);
 		List<User> listUsers = page.getContent();

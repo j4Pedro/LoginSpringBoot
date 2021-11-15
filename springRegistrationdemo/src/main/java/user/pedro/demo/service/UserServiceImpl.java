@@ -3,8 +3,6 @@ package user.pedro.demo.service;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +25,12 @@ import user.pedro.demo.web.dto.UserRegistrationDto;
 @Service
 public class UserServiceImpl implements UserService {
 
+	@Autowired
 	private UserRepository userRepository;
 
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
+	
 
 	public UserServiceImpl(UserRepository userRepository) {
 		super();
@@ -81,5 +81,12 @@ public class UserServiceImpl implements UserService {
 		Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
 		return this.userRepository.findAll(pageable);
 	}
+
+	@Override
+	public void createUser(User user) {
+		userRepository.save(user);
+		
+	}
+
 
 }
